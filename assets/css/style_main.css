@@ -13,25 +13,6 @@ body {
 	background-repeat: no-repeat;
 }
 
-.container {
-	display: grid;
-	grid-row-gap: 30vh;
-	grid-column-gap: 6vw;
-	padding-top: 15vh;
-	padding-bottom: 15vh;
-	justify-content: center;
-	text-align: center;
-	font-size: 60px;
-}
-
-.container > * > * {
-	align-items: center;
-	background: linear-gradient(to bottom left, rgba(76, 94, 106, 0.6) 0%, rgba(150, 140, 150, 0.8) 100%);
-	border: 6px outset #314243;
-	border-radius: 20px;
-	box-shadow: 10px 15px 10px rgba(0, 0, 0, 0.5);
-}
-
 .row-1, .row-2, .row-3 {
 	scroll-snap-align: center;
 }
@@ -49,10 +30,35 @@ body {
 	grid-area: side;
 }
 
-@media screen and (min-width: 720px) {
+.container {
+	display: grid;
+	justify-content: center;
+	text-align: center;
+	font-family: "EB Garamond", serif;
+}
+
+.container > * > * {
+	align-items: center;
+	background: linear-gradient(to bottom left, rgba(76, 94, 106, 0.6) 0%, rgba(150, 140, 150, 0.8) 100%);
+	border: 6px outset #314243;
+	border-radius: 20px;
+	box-shadow: 10px 15px 10px rgba(0, 0, 0, 0.5);
+}
+
+#headshot {
+	max-height: 30vh;
+	width: auto;
+	border:  2px solid black;
+}
+
+@media screen and (min-width: 640px) and (min-height: 480px) {
 	.container {
+		grid-row-gap: 30vh;
+		grid-column-gap: 6vw;
+		padding-top: 15vh;
+		padding-bottom: 15vh;
 		grid-template-rows: repeat(3, 70vh);
-		grid-template-columns: 60% 20%;
+		grid-template-columns: 60vw 20vw;
 		grid-template-areas: 
 			"1 side"
 			"2 side"
@@ -61,12 +67,48 @@ body {
 	.col-side {
 		grid-row: 1 / span 3;
 	}
-	.panel-side {
-		height: 70vh;
-		position: fixed;
-		width: 20%;
+	#navbar {
+		position: absolute;
+		top: 0;
+		left:  35vw;
+		width: 30vw;
+		align-items: center;
+	}
+	#navbar ul > * a {
+		float: left;
+		text-decoration: none;
+		font-size: 24px;
+		color: white;
+		background-color: #314243;
+		border: 1px solid black;
+		padding:  10px;
+		margin: 5px;
+		text-align: center;
+	}
+}
+
+@media screen and (min-width: 1280px) and (min-height: 720px) {
+	.container > * > * {
+		padding:  20px;
+		display:  grid;
+		font-size: 20px;
+		height: 65vh;
 	}
 	.panel-1, .panel-2, .panel-3 {
-		height: 100%;
+		grid-gap:  10px;
+		grid-template-rows:
+			[headshot-start] 1fr
+			[section-1-start] 1fr
+			[section-2-start] 1fr;
+		grid-template-columns: 
+			[headshot-start] 1fr
+			[col-aside-start] 2fr;
+	}
+	.section-1, .section-2 {
+		grid-column: 1 / span 2;
+	}
+	.panel-side {
+		position: fixed;
+		width: 17.5vw;
 	}
 }
