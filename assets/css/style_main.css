@@ -24,40 +24,49 @@ body {
 	font-size: 60px;
 }
 
-.panel-1, .panel-2, .panel-3 {
-	background-color: saddlebrown;
-	scroll-snap-align: center;
-	/*scroll-padding: 300px;*/
+.container > * > * {
+	align-items: center;
+	background: linear-gradient(to bottom left, rgba(76, 94, 106, 0.6) 0%, rgba(150, 140, 150, 0.8) 100%);
+	border: 6px outset #314243;
+	border-radius: 20px;
+	box-shadow: 10px 15px 10px rgba(0, 0, 0, 0.5);
 }
 
-.panel-1 {
+.row-1, .row-2, .row-3 {
+	scroll-snap-align: center;
+}
+
+.row-1 {
 	grid-area: 1;
 }
-.panel-2 {
+.row-2 {
 	grid-area: 2;
 }
-.panel-3 {
+.row-3 {
 	grid-area: 3;
 }
-.panel-side {
+.col-side {
 	grid-area: side;
 }
 
 @media screen and (min-width: 720px) {
 	.container {
-		grid-template-rows: 70vh 70vh 70vh;
+		grid-template-rows: repeat(3, 70vh);
 		grid-template-columns: 60% 20%;
 		grid-template-areas: 
 			"1 side"
 			"2 side"
 			"3 side";
 	}
-	.panel-side {
+	.col-side {
 		grid-row: 1 / span 3;
 	}
-	nav {
+	.panel-side {
 		height: 70vh;
-		align-items: center;
-		background-color: salmon;
+		position: fixed;
+		width: 20%;
+	}
+	.panel-1, .panel-2, .panel-3 {
+		height: 100%;
 	}
 }
