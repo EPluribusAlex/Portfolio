@@ -1,0 +1,54 @@
+.wrapper {
+	height: 300vh;
+	background-color: black; 
+	background-image: url("../media/images/salmon_beach.jpg"); 
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.container {
+	display: grid;
+	grid-row-gap: 30vh;
+	grid-column-gap: 6vw;
+	padding-top: 15vh;
+	justify-content: center;
+	text-align: center;
+}
+
+.container .panel-1, .panel-2, .panel-3 {
+	background-color: saddlebrown;
+	font-size: 60px;
+}
+
+.panel-1 {
+	grid-area: 1;
+}
+.panel-2 {
+	grid-area: 2;
+}
+.panel-3 {
+	grid-area: 3;
+}
+.panel-side {
+	grid-area: side;
+}
+
+@media screen and (min-width: 720px) {
+	.container {
+		grid-template-rows: 70vh 70vh 70vh;
+		grid-template-columns: 60% 20%;
+		grid-template-areas: 
+			"1 side"
+			"2 side"
+			"3 side";
+	}
+	.panel-side {
+		grid-row: 1 / span 3;
+	}
+	nav {
+		height: 70vh;
+		align-items: center;
+		background-color: salmon;
+	}
+}
