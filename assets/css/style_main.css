@@ -68,11 +68,15 @@ body {
 		grid-row: 1 / span 3;
 	}
 	#navbar {
+		display: flex;
 		position: absolute;
 		top: 0;
-		left:  35vw;
-		width: 30vw;
-		align-items: center;
+		width: 100vw;
+		justify-content: center;
+	}
+	#navbar ul {
+		display: flex;
+		justify-content: center;
 	}
 	#navbar ul > * a {
 		float: left;
