@@ -25,20 +25,20 @@ body {
 	background: #314243;
 }
 
-.row-1, .row-2, .row-3 {
+.maingrid-1, .maingrid-2, .maingrid-3 {
 	scroll-snap-align: center;
 }
 
-.row-1 {
+.maingrid-1 {
 	grid-area: 1;
 }
-.row-2 {
+.maingrid-2 {
 	grid-area: 2;
 }
-.row-3 {
+.maingrid-3 {
 	grid-area: 3;
 }
-.col-side {
+.maingrid-4 {
 	grid-area: side;
 }
 
@@ -57,10 +57,40 @@ body {
 	box-shadow: 10px 15px 10px rgba(0, 0, 0, 0.5);
 }
 
-#headshot {
-	max-height: 30vh;
+.headshot {
+	height: 100%;
+	display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.headshot img {
+	max-height: 90%;
 	width: auto;
-	border:  2px solid black;
+	border: 2px solid black;
+}
+
+.tooltiptext {
+	font-family: "Satisfy", cursive;
+}
+
+.headshot .tooltiptext {
+  visibility: hidden;
+  width: 30vw;
+  background-color: rgb(150, 140, 150);
+  color: black;
+  text-align: center;
+  padding: 5px 0;
+  border: 1px solid black;
+  border-radius: 6px;
+  position: fixed;
+  z-index: 1;
+  bottom: 5px;
+  left: 35vw;
+}
+
+.headshot:hover .tooltiptext {
+  visibility: visible;
 }
 
 @media screen and (min-width: 640px) and (min-height: 480px) {
@@ -76,7 +106,7 @@ body {
 			"2 side"
 			"3 side";
 	}
-	.col-side {
+	.maingrid-4 {
 		grid-row: 1 / span 3;
 	}
 	#navbar {
@@ -116,16 +146,15 @@ body {
 		height: 65vh;
 	}
 	.panel-1, .panel-2, .panel-3 {
-		grid-gap:  10px;
+		grid-gap: 10px;
 		grid-template-rows:
 			[headshot-start] 1fr
-			[section-1-start] 1fr
-			[section-2-start] 1fr;
+			[section-1-start] 1fr;
 		grid-template-columns: 
 			[headshot-start] 1fr
-			[col-aside-start] 2fr;
+			[aside-1-start] 2fr;
 	}
-	.section-1, .section-2 {
+	.section-1 {
 		grid-column: 1 / span 2;
 	}
 	.panel-side {
