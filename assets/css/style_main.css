@@ -44,9 +44,19 @@ body {
 
 .container {
 	display: grid;
+	grid-template-rows: repeat(4, 90vh);
+	grid-template-columns: 90vw;
+	grid-row-gap: 10vh;
+	padding-top: 10vh;
+	padding-bottom: 10vh;
 	justify-content: center;
 	text-align: center;
 	font-family: "EB Garamond", serif;
+}
+
+.grid-4 {
+	grid-row: 4;
+	grid-column: 1;
 }
 
 .panel {
@@ -134,6 +144,18 @@ hr {
 }
 
 @media screen and (min-width: 960px) and (min-height: 540px) {
+	.container {
+		grid-row-gap: 30vh;
+		grid-column-gap: 6vw;
+		padding-top: 15vh;
+		padding-bottom: 15vh;
+		grid-template-rows: repeat(3, 70vh);
+		grid-template-columns: 60vw 20vw;
+		grid-template-areas: 
+			"1 side"
+			"2 side"
+			"3 side";
+	}
 	#navbar {
 		display: flex;
 		position: absolute;
@@ -161,20 +183,9 @@ hr {
 		text-align: center;
 		box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.5);
 	}
-	.container {
-		grid-row-gap: 30vh;
-		grid-column-gap: 6vw;
-		padding-top: 15vh;
-		padding-bottom: 15vh;
-		grid-template-rows: repeat(3, 70vh);
-		grid-template-columns: 60vw 20vw;
-		grid-template-areas: 
-			"1 side"
-			"2 side"
-			"3 side";
-	}
 	.grid-4 {
 		grid-row: 1 / span 3;
+		grid-column: 2;
 	}
 	.panel {
 		padding: 20px;
