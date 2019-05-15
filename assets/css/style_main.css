@@ -25,10 +25,6 @@ body {
 	background: #314243;
 }
 
-.grid-1, .grid-2, .grid-3 {
-	scroll-snap-align: center;
-}
-
 .grid-1 {
 	grid-area: 1;
 }
@@ -44,7 +40,7 @@ body {
 
 .container {
 	display: grid;
-	grid-template-rows: repeat(4, 90vh);
+	grid-template-rows: repeat(4, auto);
 	grid-template-columns: 90vw;
 	grid-row-gap: 10vh;
 	padding-top: 10vh;
@@ -66,6 +62,11 @@ body {
 	border: 6px outset #314243;
 	border-radius: 20px;
 	box-shadow: 10px 15px 10px rgba(0, 0, 0, 0.5);
+	padding: 15px;
+	grid-gap: 15px;
+	font-size: 16px;
+	font-weight: bold;
+	min-height: 75vh;
 }
 
 .headshot {
@@ -144,6 +145,9 @@ hr {
 }
 
 @media screen and (min-width: 960px) and (min-height: 540px) {
+	.grid-1, .grid-2, .grid-3 {
+		scroll-snap-align: center;
+	}
 	.container {
 		grid-row-gap: 30vh;
 		grid-column-gap: 6vw;
@@ -192,6 +196,7 @@ hr {
 		grid-gap: 10px;
 		font-size: 14px;
 		font-weight: bold;
+		min-height: 0;
 		height: 65vh;
 	}
 	.grid-1 .panel {
