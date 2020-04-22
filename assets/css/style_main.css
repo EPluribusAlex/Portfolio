@@ -5,13 +5,23 @@ body {
 #wrapper {
 	height: 100vh;
 	overflow-y: scroll;
-	scroll-snap-type: y mandatory;
-	background-color: black; 
-	background-image: url("../media/images/salmon_beach.jpg"); 
+	scroll-snap-type: y mandatory; 
 	background-position: center 70%;
 	background-size: cover;
 	background-repeat: no-repeat;
 	scrollbar-color: #314243 rgba(76, 94, 106, 0.6);
+}
+
+#scenery {
+	content: "";
+	background-image: url("../media/images/blur.jpg");
+  opacity: 1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
 }
 
 #wrapper::-webkit-scrollbar {
