@@ -25,28 +25,32 @@ $(function() {
 					 .to("#scenery", {opacity: 1, duration: 1.5});
 	}
 
-  $("#wrapper").scroll(function() {
-  	if($(".grid-1").isOnScreen()) {
-  		if(target !== "grid-1") {
-  			changeScene("url('assets/media/images/blur.jpg')");
-  			target = "grid-1";
-  		}
-  		console.log("grid 2");
-  	} 
-  	else if($(".grid-2").isOnScreen()) {
-  		if(target !== "grid-2") {
-  			changeScene("url('assets/media/images/city.jpg')");
-  			target = "grid-2";
-  		}
-  		console.log("grid 2");
-  	} 
-  	else if($(".grid-3").isOnScreen()) {
-  		if(target !== "grid-3") {
-	  		changeScene("url('assets/media/images/salmon_beach.jpg')");
-	  		target = "grid-3";
+	$("#wrapper").scroll(function() {
+    clearTimeout($.data(this, 'scrollTimer'));
+    $.data(this, 'scrollTimer', setTimeout(function() {
+      if($(".grid-1").isOnScreen()) {
+	  		if(target !== "grid-1") {
+	  			changeScene("url('assets/media/images/blur.jpg')");
+	  			target = "grid-1";
 	  		}
-	  	console.log("grid 3");
-  	}
-  });
+	  		console.log("grid 2");
+	  	} 
+	  	else if($(".grid-2").isOnScreen()) {
+	  		if(target !== "grid-2") {
+	  			changeScene("url('assets/media/images/city.jpg')");
+	  			target = "grid-2";
+	  		}
+	  		console.log("grid 2");
+	  	} 
+	  	else if($(".grid-3").isOnScreen()) {
+	  		if(target !== "grid-3") {
+		  		changeScene("url('assets/media/images/salmon_beach.jpg')");
+		  		target = "grid-3";
+		  		}
+		  	console.log("grid 3");
+	  	}
+      console.log("Haven't scrolled in 250ms!");
+    }, 250));
+	});
 
 });
