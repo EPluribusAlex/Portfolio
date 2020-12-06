@@ -21,12 +21,12 @@ $(function() {
 
 	function changeScene(scene) {
 		sceneTl.to("#scenery", {opacity: 0, duration: 1})
-					 .set("#scenery", {backgroundImage: scene})
-					 .to("#scenery", {opacity: 1, duration: 1.5});
+					 .set("#scenery", {backgroundImage: scene});
+		sceneTl.to("#scenery", {opacity: 1, duration: 1});
 	}
 
 	$("#wrapper").scroll(function() {
-    clearTimeout($.data(this, 'scrollTimer'));
+    // clearTimeout($.data(this, 'scrollTimer'));
     $.data(this, 'scrollTimer', setTimeout(function() {
       if($(".grid-1").isOnScreen()) {
 	  		if(target !== "grid-1") {

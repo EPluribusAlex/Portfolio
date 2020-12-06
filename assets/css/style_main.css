@@ -46,12 +46,14 @@ body {
 }
 .grid-4 {
 	grid-area: side;
+	grid-row: 4;
+	grid-column: 1;
 }
 
 .container {
-	display: grid;
 	grid-template-rows: repeat(4, auto);
 	grid-template-columns: 90vw;
+	display: grid;
 	grid-row-gap: 10vh;
 	padding-top: 10vh;
 	padding-bottom: 10vh;
@@ -60,36 +62,32 @@ body {
 	font-family: "EB Garamond", serif;
 }
 
-.grid-4 {
-	grid-row: 4;
-	grid-column: 1;
-}
-
 .panel {
+	grid-template-columns: repeat(auto-fit);
+	grid-template-rows: repeat(auto-fit);
 	display: grid;
-	align-items: center;
+	place-items: center;
 	background: linear-gradient(to bottom left, rgba(76, 94, 106, 0.6) 0%, rgba(150, 140, 150, 0.8) 100%);
 	border: 6px outset #314243;
 	border-radius: 20px;
 	box-shadow: 10px 15px 10px rgba(0, 0, 0, 0.5);
 	padding: 15px;
-	grid-gap: 15px;
+	gap: 15px;
 	font-size: 16px;
 	font-weight: bold;
 	min-height: 75vh;
 }
 
 .headshot {
-	height: 100%;
+	height: 200px;
 	display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .headshot img {
-	width: auto;
+	max-height:  90%;
 	border: 2px solid black;
-	max-height: 90%;
 }
 
 .tooltiptext {
@@ -116,14 +114,13 @@ body {
 }
 
 .fluff {
-	height: 100%;
+	height: 200px;
 	display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .fluff img {
-	width: auto;
 	border: 2px solid black;
 	max-height: 90%;
 }
